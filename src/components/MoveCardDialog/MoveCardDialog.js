@@ -2,11 +2,13 @@ import { DialogTitle } from '@mui/material';
 import React from 'react';
 import { Dialog, DialogContent, IconButton } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
+import { Form } from '../../pages/CardContainer/CardContainer.style';
 
 function MoveCardDialog({visible,closeModal,setNewBucketCategory,handleMoveCard}) {
     return (
         <>
             <Dialog
+            fullWidth={true}
             open={visible}
             onClose={closeModal}
             sx={{ fontFamily: "Roboto"}}
@@ -30,13 +32,13 @@ function MoveCardDialog({visible,closeModal,setNewBucketCategory,handleMoveCard}
             ) : null}
           </DialogTitle>
             <DialogContent sx={{height:"30vh"}}>
-                <form>
+                <Form>
                     <label>Category:</label>
                     <input type="text" onChange={(e)=>{
                         setNewBucketCategory(e.target.value)
                     }}></input>
                     <button onClick={(e)=>handleMoveCard(e)}>Submit</button>
-                </form>
+                </Form>
             </DialogContent>
         </Dialog>
         </>

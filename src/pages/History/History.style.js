@@ -12,7 +12,7 @@ export const HistoryCard=styled.div`
     margin:2rem 3rem;
     color:#ffffff;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
 
     .video-icon{

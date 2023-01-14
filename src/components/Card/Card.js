@@ -22,7 +22,7 @@ function Card({data,cardData,setCardData}) {
   const removeCard=async (e)=>{
     e.preventDefault();
     if(data)
-    await axios.delete(`http://localhost:3333/cards/${data.id}`).then((res)=>{
+    await axios.delete(`https://test-api-augx.onrender.com/cards/${data.id}`).then((res)=>{
       const tempData=[...cardData];
       const index=tempData.findIndex(i => i.id === data.id);
       if(index !== -1) tempData.splice(index,1); 
@@ -32,7 +32,7 @@ function Card({data,cardData,setCardData}) {
 
   const handleClickOnCard=async ()=>{
     setVisible(!visible);
-    await axios.patch(`http://localhost:3333/cards/${data.id}`,{
+    await axios.patch(`https://test-api-augx.onrender.com/cards/${data.id}`,{
       click:1
     }).then((res)=>{
       const tempData=[...cardData];
@@ -46,7 +46,7 @@ function Card({data,cardData,setCardData}) {
   const handleMoveCard=async (e)=>{
     e.preventDefault();
     closeMoveCardModal();
-    await axios.patch(`http://localhost:3333/cards/${data.id}`,{
+    await axios.patch(`https://test-api-augx.onrender.com/cards/${data.id}`,{
       bucketCategory:newBucketCategory
     }).then((res)=>{
       const tempData=[...cardData];
@@ -74,7 +74,6 @@ function Card({data,cardData,setCardData}) {
             open={visible}
             onClose={closeModal}
             sx={{ fontFamily: "Roboto"}}
-            // PaperProps={getPaperParams()}
         >
           <DialogTitle sx={{fontSize:"1.5rem",fontWeight:"700",textAlign:"center"}}>
             Video Player

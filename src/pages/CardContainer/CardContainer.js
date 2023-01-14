@@ -18,15 +18,18 @@ function CardContainer({cardData,setCardData}) {
         setOpenAddModal(true);
     };
 
-    const handleSubmit=async (e)=>{
+    const handleSubmit=(e)=>{
         // map.set(newCardData.bucketCategory,1);
         e.preventDefault();
         const tempData=[...cardData];
         const param = {...newCardData,id: tempData.length ? tempData.length + 1 : 1,click:0};
         setNewCardData(param);
         tempData.push(param);
+        console.log(param);
         setCardData(tempData);
-        await axios.post("http://localhost:3333/cards",param);
+        axios.post("https://test-api-augx.onrender.com/cards",param).then(()=>{
+            console.log("jaha");
+        });
         closeModal();
     };
 
@@ -71,6 +74,9 @@ function CardContainer({cardData,setCardData}) {
                             setNewCardData({...newCardData,title:e.target.value})
                         }}/>
                         <label>Category:</label>
+                        {/* <select>
+                            
+                        </select> */}
                         <input type="text" onChange={(e)=>{
                             setNewCardData({...newCardData,bucketCategory:e.target.value})
                         }}></input>

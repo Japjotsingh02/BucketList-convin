@@ -10,7 +10,7 @@ function App() {
   const [cardData,setCardData]=useState(null);
 
   useEffect(()=>{
-      axios.get("http://localhost:3333/cards").then((res)=>{
+      axios.get("https://test-api-augx.onrender.com/cards").then((res)=>{
           const data=res.data;
           setCardData(data);
       })

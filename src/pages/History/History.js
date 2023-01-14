@@ -11,9 +11,9 @@ function History({data}) {
                 return(
                     <HistoryCard>
                         <img src={VideoIcon} alt="logo" className='video-icon'></img>
-                        <div className='title'>{d.title}</div>
+                        <div className='title'>TItle: {d.title}</div>
                         <div className='category'>Bucket Category: {d.bucketCategory}</div>
-                        <div className='category'>Bucket Category: {d.video}</div>
+                        <div className='category'>Video URL: {d.video}</div>
                     </HistoryCard>
                 )
             })}
