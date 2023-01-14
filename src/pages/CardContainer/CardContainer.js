@@ -25,11 +25,8 @@ function CardContainer({cardData,setCardData}) {
         const param = {...newCardData,id: tempData.length ? tempData.length + 1 : 1,click:0};
         setNewCardData(param);
         tempData.push(param);
-        console.log(param);
         setCardData(tempData);
-        axios.post("https://test-api-augx.onrender.com/cards",param).then(()=>{
-            console.log("jaha");
-        });
+        axios.post("https://test-api-augx.onrender.com/cards",param);
         closeModal();
     };
 

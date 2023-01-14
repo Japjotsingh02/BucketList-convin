@@ -40,7 +40,6 @@ function Card({data,cardData,setCardData}) {
       if(index !== -1) tempData[index].count++;
       setCardData(tempData);
     });
-    console.log(data);
   }
 
   const handleMoveCard=async (e)=>{
@@ -54,7 +53,6 @@ function Card({data,cardData,setCardData}) {
       if(index !== -1) tempData[index].bucketCategory=newBucketCategory;
       setCardData(tempData);
     });
-    console.log(data);
   }
 
   return (
